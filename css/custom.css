@@ -296,7 +296,60 @@ select, textarea, button{
 	height: 0% !important;
 }
 
+#map-container{
+	width: 100%;
+	position: absolute;
+}
 
+.pin{
+	z-index: 100;
+	position: absolute;
+	height: 50px;
+	width: 100px;
+}
+
+.pin img{
+	width: 35px;
+
+}
+
+.pin .barrio-name{
+	width: 100%;
+	text-align: center;
+	position: relative;
+	right: -40%;
+	top: -76%;
+	overflow: hidden;
+	background: white;
+	padding: 0 4px 0 4px;
+	border-radius: 5px;
+	visibility: hidden;
+}
+
+.barrio-number{
+	position: relative;
+	color: white;
+	top: 26px;
+	right: -12px;
+}
+
+#yatch{
+	top: 10%;
+	left: 27%;
+}
+
+#yatch div:hover .barrio-name{
+	visibility: visible;
+}
+
+#caletas{
+	top: 24%;
+	left: 30%;
+}
+
+#caletas div:hover .barrio-name{
+	visibility: visible;
+}
 
 
 
