@@ -3,6 +3,10 @@
 	width: 200px
 }
 
+a{
+	color: #65b5e3;;
+}
+
 .bg-primary {
 	background-color:  #65b5e3 !important;
 }
@@ -243,6 +247,7 @@ select, textarea, button{
     height: 100%;
 }
 
+
 .mob-show {
 	left: 0;
 }
@@ -298,57 +303,212 @@ select, textarea, button{
 
 #map-container{
 	width: 100%;
-	position: absolute;
+	position: relative;
 }
 
 .pin{
 	z-index: 100;
+    width: 3%;
 	position: absolute;
-	height: 50px;
-	width: 100px;
 }
 
 .pin img{
-	width: 35px;
+	width: 100%;
+	user-select: none;
 
 }
 
+
 .pin .barrio-name{
-	width: 100%;
 	text-align: center;
-	position: relative;
-	right: -40%;
-	top: -76%;
+	position: absolute;
+	right: -367%;
+	top: -23%;
 	overflow: hidden;
 	background: white;
 	padding: 0 4px 0 4px;
 	border-radius: 5px;
-	visibility: hidden;
+	width: 90px;
+	font-size: 15px;
+	z-index: 90;
+    display: none;
+	transition: opacity 1s;
+	opacity: 0;
+	transition-delay: 1s; /* delays for 1 second */
+	-webkit-transition-delay: 1s; /* for Safari & Chrome */
 }
 
+
 .barrio-number{
-	position: relative;
+	position: absolute;
 	color: white;
-	top: 26px;
-	right: -12px;
+	top: 2px;
+	right: 35%;
+	user-select: none;
+	font-size: 13px;
 }
 
 #yatch{
-	top: 10%;
+	top: 13.5%;
 	left: 27%;
 }
 
-#yatch div:hover .barrio-name{
-	visibility: visible;
-}
-
 #caletas{
-	top: 24%;
-	left: 30%;
+	top: 25%;
+	left: 30.5%;
 }
 
-#caletas div:hover .barrio-name{
-	visibility: visible;
+#puerto-escondido{
+    top: 19%;
+    left: 37.5%;
+}
+
+#islas-del-canal{
+    top: 22%;
+    left: 35.5%;
+}
+
+#bahia-grande{
+     top: 31%;
+     left: 34.5%;
+}
+
+#sendero{
+    top: 43%;
+    left: 37.5%;
+}
+
+#portezuelo{
+    top: 48%;
+    left: 38%;
+}
+
+#los-sauces{
+    top: 54%;
+    left: 31.5%;
+}
+
+#los-lagos{
+    top: 54.5%;
+    left: 24%;
+}
+
+#los-castores{
+    top: 60%;
+    left: 34.5%;
+}
+
+#los-alisos{
+    top: 63.5%;
+    left: 21%;
+}
+
+#la-isla{
+    top: 72.5%;
+    left: 49.5%;
+}
+
+#la-isla{
+    top: 72.5%;
+    left: 49.5%;
+}
+
+#la-alameda{
+    top: 75.5%;
+    left: 27.5%;
+}
+
+#cabos-del-lago{
+    top: 77.5%;
+    left: 36%;
+}
+
+#las-glorietas{
+    top: 83.5%;
+    left: 34%;
+}
+
+#el-palmar{
+    top: 81.5%;
+    left: 50%;
+}
+
+#lago-escondido{
+    top: 81.5%;
+    left: 24%;
+}
+
+#barrancas-del-lago{
+    top: 85.5%;
+    left: 42.5%;
+}
+
+#islas-del-golf{
+    top: 34.5%;
+    left: 61.5%;
+}
+
+#lagos-del-golf{
+    top: 46.5%;
+    left: 61.5%;
+}
+
+#castanos{
+    top: 86.5%;
+    left: 68.5%;
+}
+
+#tipas{
+    top: 78.5%;
+    left: 19.5%;
+}
+
+#el-golf{
+    top: 45.5%;
+    left: 55.5%;
+}
+
+#virazon{
+    top: 43.5%;
+    left: 70.5%;
+}
+
+#el-portal{
+    top: 37%;
+    left: 37%;
+}
+
+#centro-comercial{
+    top: 39%;
+    left: 34%;
+}
+
+#oficinas-nordelta{
+    top: 85%;
+    left: 23%;
+}
+
+#zona-colegios{
+    top: 84%;
+    left: 48%;
+}
+
+#puerto-canoas{
+    top: 81%;
+    left: 54%;
+}
+
+.info{
+    color: black;
+    right: 43%;
+}
+
+.mayor-10{
+    right:21%;
+}
+
+.show{
+    display: block !important;
 }
 
 
@@ -446,4 +606,9 @@ select, textarea, button{
 	
 	visibility: visible !important;
 	}
+}
+
+#yatch:hover>#yatch-text, #caletas:hover>#caletas-text, #puerto-escondido:hover>#puerto-escondido-text, #islas-del-canal:hover>#islas-del-canal-text, #bahia-grande:hover>#bahia-grande-text, #sendero:hover>#sendero-text, #puerto-escondido:hover>#puerto-escondido-text, #islas-del-canal:hover>#islas-del-canal-text, #bahia-grande:hover>#bahia-grande-text, #sendero:hover>#sendero-text,#portezuelo:hover>#portezuelo-text, #los-sauces:hover>#los-sauces-text, #los-lagos:hover>#los-lagos-text, #los-castores:hover>#los-castores-text, #los-alisos:hover>#los-alisos-text, #la-alameda:hover>#la-alameda-text, #cabos-del-lago:hover>#cabos-del-lago-text, #las-glorietas:hover>#las-glorietas-text, #sendero:hover>#sendero-text, #el-palmar:hover>#el-palmar-text, #lago-escondido:hover>#lago-escondido-text, #barrancas-del-lago:hover>#barrancas-del-lago-text, #islas-del-golf:hover>#islas-del-golf-text, #castanos:hover>#castanos-text, #tipas:hover>#tipas-text, #el-golf:hover>#el-golf-text, #virazon:hover>#virazon-text, #el-portal:hover>#el-portal-text, #centro-comercial:hover>#centro-comercial-text, #oficinas-nordelta:hover>#oficinas-nordelta-text, #zona-colegios:hover>#zona-colegios-text, #puerto-canoas:hover>#puerto-canoas-text{
+	display: block;
+	opacity: 1
 }

@@ -57,107 +57,546 @@
     <!-- HEADER END-->
     <!-- CONTENT-->
     <main class="main">
-        <section class="section section-catalog full-height">
+        <section class="container section section-catalog full-height">
             <div class="row no-gutters">
-                <div class="col-lg-4 sidebar d-none d-lg-block">
+                <div class="col-lg-3 sidebar d-none d-lg-block" style="margin-top: 40px">
                     <div class="sidebar">
                         <div class="container">
-                            <form class="side-form" action="">
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">OPERACIÓN</label>
-                                    <select class="form-control form-sm">
-                                        <option value="any" selected disabled>Tipo de Operación</option>
-                                        <option value="type_1">Compra</option>
-                                        <option value="type_2">Alquiler</option>
-                                        <option value="type_3">Alquiler Temporario</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">PROPIEDAD</label>
-                                    <select class="form-control form-sm">
-                                        <option value="any_Purpose" selected disabled>Tipo de Propiedad</option>
-                                        <option value="Purpose_1">Casa</option>
-                                        <option value="Purpose_2">Departamento</option>
-                                        <option value="Purpose_3">Local</option>
-                                        <option value="Purpose_4">Lote</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">Precio</label>
-
-                                    <div class="d-flex justify-content-between">
-                                        <select class="form-control mon-sel form-sm">
-                                            <option value="any_Purpose">US$</option>
-                                            <option value="Purpose_1">AR$</option>
-                                        </select>
-                                        <input type="tel" class="form-control mon-inp form-sm" placeholder="Desde">
-                                        <input type="tel" class="form-control mon-inp form-sm" placeholder="Hasta">
-                                    </div>
-                                </div>
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">ZONA</label>
-                                    <select class="form-control form-sm">
-                                        <option value="any_Purpose" selected disabled>Zonas</option>
-                                        <option value="Purpose_1">Nordelta</option>
-                                        <option value="Purpose_2">GBA Zona Norte</option>
-                                        <option value="Purpose_3">Miami</option>
-                                        <option value="Purpose_4">Puertos</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">BARRIO</label>
-                                    <select class="form-control form-sm">
-                                        <option value="any_Purpose" selected disabled>Localidades y Barrios</option>
-                                        <option value="Purpose_1">Cabos del Lago</option>
-                                        <option value="Purpose_2">Los Castores</option>
-                                        <option value="Purpose_3">Bahía Grande</option>
-                                        <option value="Purpose_4">Puertos</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">LOTE</label>
-                                    <select class="form-control form-sm">
-                                        <option value="any_Purpose" selected disabled>Tipo de Lote</option>
-                                        <option value="Purpose_1">A la calle</option>
-                                        <option value="Purpose_2">Al Agua</option>
-                                        <option value="Purpose_3">Al Golf</option>
-                                        <option value="Purpose_4">Interno</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-custom">
-                                    <label class="pl-1 pb-1 select-label" for="">Habitaciones</label>
-                                    <select class="form-control form-sm">
-                                        <option value="any_Purpose" selected disabled>Cantidad de habitaciones</option>
-                                        <option value="Purpose_1">1</option>
-                                        <option value="Purpose_2">2</option>
-                                        <option value="Purpose_3">3</option>
-                                        <option value="Purpose_4">4</option>
-                                        <option value="Purpose_4">5+</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-primary btn-md btn-block btn-search" type="submit" value="Buscar">Buscar </button>
-                            </form>
+                            <ul>
+                                <li class="text-center mb-1"><a href="">Mapa</a></li>
+                                <li class="text-center mb-1"><a href="">Descripción</a></li>
+                                <li class="text-center mb-1"><a href="">Servicios</a></li>
+                                <li class="text-center mb-1"><a href="">Barrios</a></li>
+                            </ul>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-lg-8 bg-secondary catalog-content">
-                    <div id="map-container" style="width: 100%;">
+                <div class="col-lg-9 catalog-content">
+                    <div id="map-container" class="d-sm-none d-xs-none d-md-block" style="width: 100%;">
                         <img src="img/masterplan.jpg" alt="" style="width:100%; margin-top: 20px;">
                         <div id="yatch" class="pin">
-                            <div style="position: absolote; height: 50px">
-                                <p class="barrio-number">1</p>
-                                <img src="img/placeholder-01.svg" alt="">
-                                <p class="barrio-name">El Yatch</p>
-                            </div>
+                            <p class="barrio-number">1</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="yatch-text" class="barrio-name">El Yatch</p>
                         </div>
                         <div id="caletas" class="pin">
-                            <div style="position: absolote; height: 50px">
-                                <img src="img/placeholder-01.svg" alt="">
-                                <p class="barrio-name">Las Caletas</p>
+                            <p class="barrio-number">2</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="caletas-text"class="barrio-name">Las Caletas</p>
+                        </div>
+                        <div id="puerto-escondido" class="pin">
+                            <p class="barrio-number">3</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="puerto-escondido-text" class="barrio-name">Puerto Escondido</p>
+                        </div>
+                        <div id="islas-del-canal" class="pin">
+                            <p class="barrio-number">4</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="islas-del-canal-text" class="barrio-name">Islas del Canal</p>
+                        </div>
+                        <div id="bahia-grande" class="pin">
+                            <p class="barrio-number">5</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="bahia-grande-text" class="barrio-name">Bahía Grande</p>
+                        </div>
+                        <div id="sendero" class="pin">
+                            <p class="barrio-number">6</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="sendero-text" class="barrio-name">Sendero</p>
+                        </div>
+                        <div id="portezuelo" class="pin">
+                            <p class="barrio-number">7</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="portezuelo-text"  class="barrio-name">Portezuelo</p>
+                        </div>
+                        <div id="los-sauces" class="pin">
+                            <p class="barrio-number">8</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="los-sauces-text" class="barrio-name">Los Sauces</p>
+                        </div>
+                        <div id="los-lagos" class="pin">
+                            <p class="barrio-number">9</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="los-lagos-text" class="barrio-name">Los Lagos</p>
+                        </div>
+                        <div id="los-castores" class="pin">
+                            <p class="barrio-number mayor-10">10</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="los-castores-text"  class="barrio-name">Los Castores</p>
+                        </div>
+                        <div id="los-alisos" class="pin">
+                            <p class="barrio-number mayor-10">11</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="los-alisos-text" class="barrio-name">Los Alisos</p>
+                        </div>
+                        <div id="la-alameda" class="pin">
+                            <p class="barrio-number mayor-10">13</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="la-alameda-text"  class="barrio-name">La Alameda</p>
+                        </div>
+                        <div id="cabos-del-lago" class="pin">
+                            <p class="barrio-number mayor-10">14</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="cabos-del-lago-text" class="barrio-name">Cabos del Lago</p>
+                        </div>
+                        <div id="las-glorietas" class="pin">
+                            <p class="barrio-number mayor-10">15</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="las-glorietas-text" class="barrio-name">Las Glorietas</p>
+                        </div>
+                        <div id="el-palmar" class="pin">
+                            <p class="barrio-number mayor-10">16</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="el-palmar-text" class="barrio-name">El Palmar</p>
+                        </div>
+                        <div id="lago-escondido" class="pin">
+                            <p class="barrio-number mayor-10">17</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="lago-escondido-text" class="barrio-name">Lago Escondido</p>
+                        </div>
+                        <div id="barrancas-del-lago" class="pin">
+                            <p class="barrio-number mayor-10">18</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="barrancas-del-lago-text"  class="barrio-name">Barrancas del Lago</p>
+                        </div>
+                        <div id="islas-del-golf" class="pin">
+                            <p class="barrio-number mayor-10">19</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p class="barrio-name"  id="islas-del-golf-text" >Isalas del Golf</p>
+                        </div>
+                        <div id="lagos-del-golf" class="pin">
+                            <p class="barrio-number mayor-10">20</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p class="barrio-name"  id="lagos-del-golf-text" >Lagos del Golf</p>
+                        </div>
+                        <div id="castanos" class="pin">
+                            <p class="barrio-number mayor-10">21</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p class="barrio-name"  id="castanos-text" >Castaños</p>
+                        </div>
+                        <div id="tipas" class="pin">
+                            <p class="barrio-number mayor-10">22</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p class="barrio-name"  id="tipas-text" >Tipas</p>
+                        </div>
+                        <div id="el-golf" class="pin">
+                            <p class="barrio-number mayor-10">23</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p class="barrio-name"  id="el-golf-text" >El Golf</p>
+                        </div>
+                        <div id="virazon" class="pin">
+                            <p class="barrio-number mayor-10">24</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p class="barrio-name"  id="virazon-text" >Virazón</p>
+                        </div>
+                        <div id="el-portal" class="pin">
+                            <p class="barrio-number mayor-10">25</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="el-portal-text"  class="barrio-name">El Portal</p>
+                        </div>
+                        <div id="centro-comercial" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="centro-comercial-text" >Centro Comercial</p>
+                        </div>
+                        <div id="oficinas-nordelta" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="oficinas-nordelta-text" >Oficinas Nordelta</p>
+                        </div>
+                        <div id="zona-colegios" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="zona-colegios-text" >Zona Colegios  </p>
+                        </div>
+                        <div id="puerto-canoas" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="puerto-canoas-text" >Puerto Canoas</p>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <h3 class="mb-1">Descripción</h3>
+                        <p>Nordelta es una ciudad pueblo en el partido de Tigre, que otorga la tranquilidad de un pueblo, pero con las comodidades y servicios de infraestructura de una ciudad. Es un núcleo urbano que surgió de un Plan Director aprobado por el Decreto de la Provincia de Buenos Aires en el año 1992 y Ordenanza Municipal del Partido de Tigre.</p>
+                        <br>
+                        <p>Nordelta ofrece una variada propuesta de áreas residenciales (con lotes de 500 a 5000 metros cuadrados, condominios con departamentos de 1 a 4 ambientes) y áreas comerciales (con oficinas y locales comerciales). Además cuenta con 6 colegios y un Centro Médico.</p>
+                        <br>
+                        <p>Nordelta ya es una ciudad pueblo consolidada:
+                        <ul>
+                        <li>23 barrios lanzados</li>
+                        <li></li>30,000 habitantes</ul>
+                        <li>5 colegios</li>
+                        <li>Centro médico con mas de 80 especialistas</li>
+                        <li>Centro Comercial con mas de 70 locales</li>
+                        <li>5 salas de cine</li>
+                        <li>4 bancos</li>
+                        <li>2 estaciones de servicio</li>
+                        <li>20 restaurantes (8 sobre la Bahía con salida al Río Lujan)</li>
+                        <li>Club deportivo</li>
+                        <li>Cancha de golf de 18 hoyos</li>
+                        <li>Hotel Wyndham (5 estrellas)</li>
+                        <li>5 colegios: Northlands, Michael Ham, Cardenal Pironio (Grupo Educativo Marin), St. Luke’s y  Northfield School.Centro Médico Nordelta de los Sanatorios Otamendi y Las Lomas.</li>
+                        <li>Centro Comercial con más de 70 locales con marcas de ropa de primera línea,  electrodomésticos, decoración, bancos, cines y supermercado entre otros.</li>
+                        <li>20 Restaurants, 8 con vista a amarras y al Paseo Bahía Grande; y más de 10 en el Centro  Comercial. Sushi Club, Down Town Matias, Los Inmortales, Taco Box, The Embers, Nucha, Le  Pain Quotidien, La Taberna, Canta el Gallo, Color Factory, Las Tablas y Mc Donald’s son algunas  de las opciones.</li>
+                        <li>Club Nordelta: propuesta deportiva para todas las edades, desarrollo de actividades náuticas  sobre el lago central, natación, fútbol, preparación fisica, crossfit, hockey, gimnasia, yoga, guardería náutica y colonia de  vacaciones.</li>
+                        <li>Cancha de Golf de 18 hoyos diseñada por Jack Nicklaus, tres veces sede del Abierto de la República (2009, 2012 y 2013), con excelente infraestructura y servicio al socio de primer nivel. ** (Previa aprobación de solicitud de membresía)</li>
+                        <li>Hotel Wyndham 5 estrellas sobre Bahía Grande con 140 habitaciones, salones de convenciones para 600 personas y SPA con pileta in/out, circuito de aguas, salas de masajes, sauna seco y húmedo, salas de relax y ducha escocesa.</li>
+                        </ul></p>
+                        <br>
+                        <p>Infraestructura de servicios: Nordelta cuenta con una subestación transformadora de alta tensión de Edenor, y redes subterráneas de media y baja tensión. Telecom detenta redes diseñadas y actualizadas, para la prestación de servicios de telefonía e internet de vanguardia, contando además con numeración urbana y llamadas internas sin cargo. Las redes de gas, diseñadas y operadas por Gas Natural Ban, se integran con plantas reguladoras de alta y media presión ubicadas dentro de Nordelta, permitiendo un adecuado suministro. Redes y Servicios (empresa relacionada con Nordelta) presta servicios desde sus orígenes, de agua potable y cloaca, cuenta asimismo con una red de riego específica e independiente. AySA comenzará a prestar servicios de agua potable al conectarse con las redes locales en el corto plazo.</p>
+                    </div>
+                    <div class="mt-3">
+                        <h3 class="mb-4">Barrios</h3>
+                        <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                            <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/bahia-grande-1.jpg);"></div>
+                            </div>
+                            <div class="flat-card_bot">
+                                <h5 class="flat-card_title"><a href="property-single.html">Bahía Grande</a></h5>
+                                <div class="flat-card_descr">
+                                    <p>La Bahía Grande de Nordelta fue construída en los inicios, cuando se hizo el dragado del canal que llega al Rio Lujan. En sus orillas se emplazan distintos condominios y el Hotel Intercontinental, formando tambien la zona gastronómica por excelencia con sus distintas variedades de restaurants.</p>
+                                    <p>La Bahia tiene su histórico Faro, que hoy es ocupado por la Capitanía, con una gran salon para los amarristas. Las amarras son ocupadas exclusivamente por embarcaciones de propietarios de Nordelta, y otras que son de uso exclusivo de algun condominio.</p>
+                                    <p>Hay condominios que son exclusivamente residenciales, y otros de uso mixto, donde conviven las viviendas con distintas actividades comerciales.</p>
+                                </div>
+                                <div class="text-center ">
+                                    <a class="btn btn-primary btn-md" style="color: white">VER PROPIEDADES</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                            <div class="flat-card">
+                                <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/barrancas.jpg);"></div>
+                                </div>
+                                <div class="flat-card_bot">
+                                    <h5 class="flat-card_title">Barrancas del Lago</h5>
+                                    <div class="flat-card_descr">
+
+                                        <p>El barrio ocupa 24 hectáreas, con un gran lago que lo rodea. Son 171 lotes de los cuales 124 son al agua. Sus lotes tienen un promedio de superficie de 700 metros cuadrados.</p>
+                                        <p>El barrio ocupa 24 hectáreas, con un gran lago que lo rodea. Son 171 lotes de los cuales 124 son al agua. Sus lotes tienen un promedio de superficie de 700 metros cuadrados.</p>
+                                    </div>
+                                    <div class="text-center ">
+                                        <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                            <div class="flat-card">
+                                <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/los-castanos-1.jpg);"></div>
+                                </div>
+                                <div class="flat-card_bot">
+                                    <h5 class="flat-card_title"><a href="property-single.html">Castaños</a></h5>
+                                    <div class="flat-card_descr">
+                                        <p>Es un barrio en construcción que apunta al ambiente familiar con 431 lotes de 540 metros cuadrados promedio de superficie. Solamente 39 lotes tienen costa de lago.</p>
+                                        <p>Es un barrio perimetral que ocupa una superficie de casi 39 hectáreas. Se ubica muy próximo al ingreso principal de Nordelta, frente al Centro de Ventas y al lado de los colegios y a la segunda sede del Club Nordelta.</p>
+                                        <p>El club house contará playa de arena natural sobre el lago, canchas de tenis, cancha de fútbol, pileta y plaza de juegos.</p>
+                                        <p>Además se desarrollarán dentro del barrio proyectos de townhouses de planta baja y hasta 2 pisos.</p>
+                                    </div>
+                                    <div class="text-center ">
+                                        <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/golf.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">El Golf</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>El Golf está conformado por dos barrios, El Golf Club y Lagos del Golf.</p>
+                                            <p>El Golf Club Nordelta es un barrio exclusivo para amantes de este deporte; cuenta con 390 lotes, y una cancha de golf de 18 hoyos, diseñada por Jack Nicklaus, el ex jugador profesional que obtuvo varios títulos como los Abiertos de Estados Unidos, Gran Bretaña y Masters de golf. El barrio además tiene 2 club houses (uno de ellos compartido con Lagos del Golf), pileta, canchas de tenis, y condominios.</p>
+                                            <p>Ocupa una superficie de 146 hectáreas con 383 lotes de 1200 metros cuadrados de superficie promedio, que conforman apenas el 34 por ciento de la superficie total del barrio. Sólo se comercializó el 34% y se destinó el 66% restante para áreas verdes comunes y espejos de agua. La característica particular del Golf Club es que la extensión de espacios verdes y áreas comunes es la mayor en Nordelta. En el diseño de urbanización todos los lotes están orientados al extenso lago central o al golf.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/el-palmar-1.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">El Palmar</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio compuesto por condominios, su mayoría con vista directa al lago central. El Palmar se encuentra muy cerca de Puerto Canoas, sede                                                del Club Nordelta y los colegios.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/yacht.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">El Yatch</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio náutico que se encuentra a orillas del Rio Luján con salida al mismo. El Yatch está conformado por 237 lotes al agua con un promedio de superficie de 1000 metros cuadrados. El barrio ocupa una superficie total de 54 hectáreas, de las cuales 24 fueron destinadas a áreas comunes y espacios verdes.</p>
+                                            <p>El club house cuenta con pileta, muelle y 44 amarras.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/islas-del-canal.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Islas del Canal</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Islas del Canal es un barrio exclusivo dentro de Nordelta por encontrarse rodeado por el canal mayor del del Río Luján. Es un barrio de condominios, con una excelente ubicación, muy próxima al acceso a Nordelta por la Ruta 27 y a la Bahia Grande</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/la-alameda.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">La Alameda</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Fue el primer barrio en comercializarse, cuenta con 302 lotes, 39 de ellos al lago, con un promedio de 830 metros cuadrados por lote. El barrio ocupa 38 hectáreas con espacios verdes, un gran lago y lindísimos paseos.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/las-islas.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Las Islas</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>La Isla cuenta con 273 lotes, de los 191 dan a las aguas del lago central y 83 son internos. Los lotes tienen entre 1000 y 5000 metros cuadrados de superficie.</p>
+                                            <p>El barrio ocupa una superficie total de 84 hectáreas, de las cuales 50 están destinadas a espacios verdes y áreas comunes.</p>
+                                            <p>El club house cuenta con canchas de tenis iluminadas.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/glorietas.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Las Glorietas</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Las Glorietas es un barrio de 311 lotes, de los cuales 143 tienen costa de lago, ocupando 37 hectáreas. Sus lotes tienen entre 600 y 800 metros cuadrados de superficie.</p>
+                                            <p>El barrio cuenta con club house, con pileta, canchas de tenis y futbol compartido con el Barrio Barrancas del Lago.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/los-alisos.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Los Alisos</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio muy familiar, con un gran lago que rodea el barrio, con puentes que logran comunicación entre distintas zonas del barrio y también con su barrio hermano Los Lagos.</p>
+                                            <p>Ocupa 67 hectáreas totales, de las cuales 33 son ocupadas por espacios comunes entre ellos cancha de futbol, tennis, lago, plazas y espacios verdes que amenizan la vida dentro del barrio. Los Alisos cuenta con 531 lotes, de los cuales 137 tienen costa de lago y la superficie promedio es de 650 metros cuadrados.</p>
+                                            <p>Actividades:
+                                                <ul>
+                                                    <li> Colonia de verano   sabados 10 hs a 13 hs</li>
+                                                    <li>Colonia de invierno sabados 10 hs a 15 hs</li>
+                                                    <li>Gimnasia para adultos lunes y miercoles de 7hs a 8hs</li>
+                                                    <li>Gimnasia para adultos lunes y miercoles de 7hs a 8hs</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md" style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/castores.gif);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Los Castores</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es el barrio más grande de Nordelta, con una superficie total de 116 hectáreas, dentro de las cuales 63 fueron destinadas a espacios comunes y bosques. Cuenta con 590 lotes, 360 con costa de lago y 230 internos. Los lotes tienen una superficie promedio de 1100 metros cuadrados.</p>
+                                            <p>Su Club House cuenta con canchas de tenis, futbol, básquet, handball y beach volley.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/los-lagos.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Los Lagos</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio familiar de 324 lotes, su lago interno cuenta con mas de 3km de costa lo que resulta 133 lotes al agua y 191 lotes internos, con un promedio de 670 metros cuadrados de superficie.</p>
+                                            <p>El barrio ocupa una superficie de 43 hectáreas, en ella su lago ocupa 22 hectáreas su lago. Su Club House cuenta con 3 canchas de tenis, futbol, pileta, un quincho con 2 parrillas, salon para 100 personas.</p>
+                                            <p>Actividades
+                                                <ul>
+                                                    <li>Colonia de Verano</li>
+                                                    <li>Colonia de Invierno</li>
+                                                    <li>Gimnasia Artistica para niños</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md" style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/los-sauces.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Los Sauces</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio muy familiar que cuenta con 2 lagos, ocupa una superficie de 35 hectáreas, con 350 lotes de los cuales 49 cuentan con costa de lago. El promedio de superficie de los lotes es de 600 metros cuadrados.</p>
+                                            <p>El barrio cuenta con club house con pileta, canchas de tenis y de futbol.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/portezuelo.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Portezuelo</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio conformado por edificios de departamentos, town houses, condominios, algunos se ubican en las orillas del lago central. Cada condominio cuenta con sus amenities, pero además Portezuelo tiene sus propias canchas de tenis, futbol y pileta.</p>
+                                            <p>Portezuelo es el barrio cerrado de media densidad con mayor consolidación dentro de Nordelta. Tiene una ubicación inigualable, con amplias costas sobre el Lago Central de 180 has de Nordelta lo que permite a sus habitantes disfrutar de unas increíbles vistas. Además se encuentra a metros del Club Nordelta, del Centro Comercial (futura ampliacion), con restaurants, cafe, heladerias, juegos, cines y Centro Médico Nordelta.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/puerto-escondido.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Puerto Escondido</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Puerto Escondido es una zona en desarrollo en la ribera de Nordelta, con una excelente ubicación muy próxima al acceso a Nordelta por la Ruta 27. Es un barrio náutico que cuenta con condominios de departamentos de 2,3 y 4 ambientes, locales comerciales, amarras y espacios comunes.</p>
+                                            <p>El barrio se encuentra muy próximo a la Bahía Grande que cuenta con una gran oferta gastronómica, cultural y de decoración, entre otros.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/sendero.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Sendero</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio cercano a la zona comercial de Nordelta, compuesto principalmente por casas de 2, 3 y 4 ambientes con jardínes, pérgolas y terrazas orientadas al parque central.</p>
+                                            <p>En el barrio se desarrollaron los siguientes proyectos:
+                                                <ul>
+                                                    <li>Casas del Sendero</li>
+                                                    <li>Panorama</li>
+                                                    <li>Lofts del Sendero</li>
+                                                </ul>
+                                            </p>
+                                            <p>l barrio cuenta con un sendero que recorre los distintos sectores, espejos de agua y pérgolas, circuito aeróbico, sectores de recreación y descanso, bici senda propia conectada a la de Nordelta, SUM y un área deportiva con 2 canchas de tenis y 1 de fútbol.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/tipas.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Tipas</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un barrio en construcción que apunta al ambiente familiar con 369 lotes de 500 metros cuadrados promedio de superficie. Solamente 29 lotes dan al lago.</p>
+                                            <p>El barrio ocupa una superficie de 36 hectáreas. Su Club House cuenta con canchas de tenis, y pileta.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/yoo-1.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">YOO</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Es un proyecto desarrollarlo por el arquitecto Carlos Ott con interiores diseñados por Starck, con una vista privilegiada a la cancha de Golf de Nordelta. Se desarrollaron ya 2 edificios con departamentos de 2, 2 y medio, 3 y hasta 4 ambientes de excelente calidad y diseño.</p>
+                                            <p>YOO cuenta con servicio de guardia las 24hs y una amplia oferta de amenities: business center, sala cyber y wi-fi, servicio de mucama, solarium, pileta exterior y para niños, parrilla, microcine, bar, biblioteca, vinoteca, gimnasio y spa entre otros.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
+                                <div class="flat-card">
+                                    <div class="flat-card_top"><div class="-resp-bg-img" style="background-image: url(img/barrios/golf.jpg);"></div>
+                                    </div>
+                                    <div class="flat-card_bot">
+                                        <h5 class="flat-card_title"><a href="property-single.html">Lagos del Golf</a></h5>
+                                        <div class="flat-card_descr">
+                                            <p>Lagos del Golf, es un barrio anexo al Golf Club, comparten el acceso con seguridad de 24 hs. La característica distintiva de este barrio es que todos sus lotes cuentan con costa de lago.</p>
+                                            <p>Ocupa una superficie de 38 hectáreas con 217 lotes de 980 metros cuadrados de superficie promedio. El barrio tiene un club house y una pileta que comparte con El Golf Club.</p>
+                                        </div>
+                                        <div class="text-center ">
+                                            <a class="btn btn-primary btn-md  " style="color: white">VER PROPIEDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
 
 
 
@@ -372,7 +811,7 @@
                     <input type="tel" class="form-control mon-inp" placeholder="Hasta">
                 </div>
             </div>
-            <button class="btn btn-primary btn-md btn-block btn-search" type="submit" value="Buscar">Buscar </button>
+            <button class="btn btn-primary btn-md   btn-search" type="submit" value="Buscar">Buscar </button>
         </form>
 
     </div>
@@ -399,6 +838,7 @@
 <script src="js/common.js"></script>
 </div>
 
+<script src="/js/map.js"></script>
 <script>
     $('.tog-nav').on('click', function(e) {
         $('.mob-filter').toggleClass('mob-show');
@@ -409,6 +849,11 @@
         $('.mob-filter').toggleClass('mob-show');
         e.preventDefault();
     });
+</script>
+<script>
+
+
+</script>
 </script>
 </body>
 
