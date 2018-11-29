@@ -63,10 +63,9 @@
                     <div class="sidebar">
                         <div class="container">
                             <ul>
-                                <li class="text-center mb-1"><a href="">Mapa</a></li>
-                                <li class="text-center mb-1"><a href="">Descripción</a></li>
-                                <li class="text-center mb-1"><a href="">Servicios</a></li>
-                                <li class="text-center mb-1"><a href="">Barrios</a></li>
+                                <li class="text-center mb-1"><a href="#map-container">Mapa</a></li>
+                                <li class="text-center mb-1"><a href="#descripcion">Descripción</a></li>
+                                <li class="text-center mb-1"><a href="#barrios">Barrios</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,15 +74,30 @@
                 <div class="col-lg-9 catalog-content">
                     <div id="map-container" class="d-sm-none d-xs-none d-md-block" style="width: 100%;">
                         <img src="img/masterplan.jpg" alt="" style="width:100%; margin-top: 20px;">
+                        <div id="centro-comercial" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="centro-comercial-text" >Centro Comercial</p>
+                        </div>
+                        <div id="oficinas-nordelta" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="oficinas-nordelta-text" >Oficinas Nordelta</p>
+                        </div>
+                        <div id="zona-colegios" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="zona-colegios-text" >Zona Colegios  </p>
+                        </div>
+                        <div id="puerto-canoas" class="pin">
+                            <strong class="barrio-number info">i</strong>
+                            <img src="img/placeholder-info-01.svg" alt="">
+                            <p class="barrio-name"  id="puerto-canoas-text" >Puerto Canoas</p>
+                        </div>
                         <div id="yatch" class="pin">
                             <p class="barrio-number">1</p>
                             <img src="img/placeholder-01.svg" alt="">
                             <p id="yatch-text" class="barrio-name">El Yatch</p>
-                        </div>
-                        <div id="caletas" class="pin">
-                            <p class="barrio-number">2</p>
-                            <img src="img/placeholder-01.svg" alt="">
-                            <p id="caletas-text"class="barrio-name">Las Caletas</p>
                         </div>
                         <div id="puerto-escondido" class="pin">
                             <p class="barrio-number">3</p>
@@ -94,6 +108,11 @@
                             <p class="barrio-number">4</p>
                             <img src="img/placeholder-01.svg" alt="">
                             <p id="islas-del-canal-text" class="barrio-name">Islas del Canal</p>
+                        </div>
+                        <div id="caletas" class="pin">
+                            <p class="barrio-number">2</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p id="caletas-text"class="barrio-name">Las Caletas</p>
                         </div>
                         <div id="bahia-grande" class="pin">
                             <p class="barrio-number">5</p>
@@ -140,11 +159,6 @@
                             <img src="img/placeholder-01.svg" alt="">
                             <p  id="cabos-del-lago-text" class="barrio-name">Cabos del Lago</p>
                         </div>
-                        <div id="las-glorietas" class="pin">
-                            <p class="barrio-number mayor-10">15</p>
-                            <img src="img/placeholder-01.svg" alt="">
-                            <p  id="las-glorietas-text" class="barrio-name">Las Glorietas</p>
-                        </div>
                         <div id="el-palmar" class="pin">
                             <p class="barrio-number mayor-10">16</p>
                             <img src="img/placeholder-01.svg" alt="">
@@ -159,6 +173,11 @@
                             <p class="barrio-number mayor-10">18</p>
                             <img src="img/placeholder-01.svg" alt="">
                             <p  id="barrancas-del-lago-text"  class="barrio-name">Barrancas del Lago</p>
+                        </div>
+                        <div id="las-glorietas" class="pin">
+                            <p class="barrio-number mayor-10">15</p>
+                            <img src="img/placeholder-01.svg" alt="">
+                            <p  id="las-glorietas-text" class="barrio-name">Las Glorietas</p>
                         </div>
                         <div id="islas-del-golf" class="pin">
                             <p class="barrio-number mayor-10">19</p>
@@ -195,28 +214,8 @@
                             <img src="img/placeholder-01.svg" alt="">
                             <p  id="el-portal-text"  class="barrio-name">El Portal</p>
                         </div>
-                        <div id="centro-comercial" class="pin">
-                            <strong class="barrio-number info">i</strong>
-                            <img src="img/placeholder-info-01.svg" alt="">
-                            <p class="barrio-name"  id="centro-comercial-text" >Centro Comercial</p>
-                        </div>
-                        <div id="oficinas-nordelta" class="pin">
-                            <strong class="barrio-number info">i</strong>
-                            <img src="img/placeholder-info-01.svg" alt="">
-                            <p class="barrio-name"  id="oficinas-nordelta-text" >Oficinas Nordelta</p>
-                        </div>
-                        <div id="zona-colegios" class="pin">
-                            <strong class="barrio-number info">i</strong>
-                            <img src="img/placeholder-info-01.svg" alt="">
-                            <p class="barrio-name"  id="zona-colegios-text" >Zona Colegios  </p>
-                        </div>
-                        <div id="puerto-canoas" class="pin">
-                            <strong class="barrio-number info">i</strong>
-                            <img src="img/placeholder-info-01.svg" alt="">
-                            <p class="barrio-name"  id="puerto-canoas-text" >Puerto Canoas</p>
-                        </div>
                     </div>
-                    <div class="mt-2">
+                    <div class="mt-5" id="descripcion">
                         <h3 class="mb-1">Descripción</h3>
                         <p>Nordelta es una ciudad pueblo en el partido de Tigre, que otorga la tranquilidad de un pueblo, pero con las comodidades y servicios de infraestructura de una ciudad. Es un núcleo urbano que surgió de un Plan Director aprobado por el Decreto de la Provincia de Buenos Aires en el año 1992 y Ordenanza Municipal del Partido de Tigre.</p>
                         <br>
@@ -246,7 +245,7 @@
                         <br>
                         <p>Infraestructura de servicios: Nordelta cuenta con una subestación transformadora de alta tensión de Edenor, y redes subterráneas de media y baja tensión. Telecom detenta redes diseñadas y actualizadas, para la prestación de servicios de telefonía e internet de vanguardia, contando además con numeración urbana y llamadas internas sin cargo. Las redes de gas, diseñadas y operadas por Gas Natural Ban, se integran con plantas reguladoras de alta y media presión ubicadas dentro de Nordelta, permitiendo un adecuado suministro. Redes y Servicios (empresa relacionada con Nordelta) presta servicios desde sus orígenes, de agua potable y cloaca, cuenta asimismo con una red de riego específica e independiente. AySA comenzará a prestar servicios de agua potable al conectarse con las redes locales en el corto plazo.</p>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3" id="barrios">
                         <h3 class="mb-4">Barrios</h3>
                         <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 d-flex">
@@ -626,84 +625,7 @@
                 </div>
             </div>
             <!-- page helper-->
-            <div class="page-helper">
-                <div class="tog-nav page-helper_btn -JS_helper_click d-xl-none d-md-block">FILTROS<i class="fas fa-filter"></i></div>
-                <div class="page-helper_block">
-                    <div class="page-helper_container">
-                        <div class="page-helper_main_title">Page menu</div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="home_01.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/home_01.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Home 01</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="home_02.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/home_02.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Home 02</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="home_03.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/home_03.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Home 03</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="home_04.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/home_04.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Home 04</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="about.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/about.png');"></div>
-                            </div>
-                            <div class="page-helper_title">About</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="catalog_01.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/catalog_1.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Properties 01</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="catalog_02.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/catalog_2.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Properties 02</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="property-single.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/single_property.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Properties single</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="agencies.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/agencies.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Agencies</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="agency_single.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/single_agency.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Agencie single</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="blog.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/blog.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Blog</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="blog-single.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/single_blog.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Blog single</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="contacts.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/contact_us.png');"></div>
-                            </div>
-                            <div class="page-helper_title">Contact</div></a></div>
-                        <div class="page-helper_col"><a class="page-helper_item" href="page_404.html">
-                            <div class="page-helper_img_wrap">
-                                <div class="-resp-bg-img page-helper_img" style="background-image: url('img/preview/page_404.png');"></div>
-                            </div>
-                            <div class="page-helper_title">404</div></a></div>
-                    </div>
-                </div>
-            </div>
+
 </div>
 </div>
 </section>
